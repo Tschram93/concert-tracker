@@ -13,7 +13,7 @@ async function fetchData() {
     const record = await res.json();
 
     // Grabbing list by id=concerts and inputting api results as content.
-    document.getElementById('concerts').innerHTML = record.data.map(item => `<li>${item.name}</li>`).join('');
+    document.getElementById('concerts').innerHTML = record.data.map(item => `<li class="list-group-item ps-4">${item.name}</li>`).join('');
 };
 
 fetchData();
