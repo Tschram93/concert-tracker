@@ -12,7 +12,8 @@ async function fetchData() {
     const res = await fetch('https://concerts-artists-events-tracker.p.rapidapi.com/location?name=Detroit&minDate=2022-10-12&maxDate=2022-10-16&page=1', options);
     const record = await res.json();
 
-    console.log('record', record);
+    // Grabbing list by id=concerts and inputting api results as content.
+    document.getElementById('concerts').innerHTML = record.data.map(item => `<li>${item.name}</li>`).join('');
 };
 
 fetchData();
